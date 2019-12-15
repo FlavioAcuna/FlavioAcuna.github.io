@@ -16,8 +16,8 @@
         <nav>
             <div class="nav-wrapper"
                 style="font-family: 'Lilita One'; background-color:#03c6fc;background-image: url(https://www.transparenttextures.com/patterns/60-lines.png);">
-                <img src="img/1.png" height="50"><a href="#" class="brand-logo">Themoviebd</a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <img src="img/1.png" height="50"><a href="#" class="brand-logo">Theseriesbd</a>
+                <ul class="right hide-on-med-and-down">
                     <li><a href="#dev">Desarrolladores</a></li>
                     <li><a href="#Popular">Populares</a></li>
                     <li><a href="#toprated">Mejor Valoradas</a></li>
@@ -31,8 +31,8 @@
 <body style="background-image: url(https://www.transparenttextures.com/patterns/cubes.png);background-color: #327ceb;">
     <main>
         <div class="row">
-            <h4 class="center" style="font-family: 'Lilita One';"><a class="white-text" name="Popular">Populares</a>
-            </h4>
+            <h2 class="center" style="font-family: 'Lilita One';"><a class="white-text" name="Popular">Populares</a>
+            </h2>
             <div class="col l3 center" style="padding:2% ; border-radius:2%;" v-for="x in results">
                 <div class="card" style="border-radius: 2%;">
                     <div class="card-image waves-effect waves-block waves-light">
@@ -68,8 +68,8 @@
     </main>
     <main2>
         <div class="row">
-            <h4 class="center" style="font-family: 'Lilita One';"><a class="white-text" name="toprated">Mejor
-                    Valoradas</a></h4>
+            <h2 class="center" style="font-family: 'Lilita One';"><a class="white-text" name="toprated">Mejor
+                    Valoradas</a></h2>
             <div class="col l3 center" style="padding:2% ; border-radius:5%;" v-for="x in results">
                 <div class="card" style="border-radius: 5%;">
                     <div class="card-image waves-effect waves-block waves-light">
@@ -105,7 +105,7 @@
     </main2>
     <main3>
         <div class="row">
-            <h4 class="center" style="font-family: 'Lilita One';"><a class="white-text" name="onair">Al Aire</a></h4>
+            <h2 class="center" style="font-family: 'Lilita One';"><a class="white-text" name="onair">Al Aire</a></h2>
             <div class="col l3 center" style="padding:2% ; border-radius:5%;" v-for="x in results">
                 <div class="card" style="border-radius: 5%;">
                     <div class="card-image waves-effect waves-block waves-light">
@@ -147,6 +147,13 @@
         });
 
     </script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems, options);
+  });
+  </script>
+
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
