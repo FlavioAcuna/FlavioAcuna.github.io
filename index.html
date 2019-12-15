@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Proyecto VueJs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<header>
+    <nav>
+        <div class="nav-wrapper">
+            <img src="img/1.png" height="50"><a href="#" class="brand-logo"></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="">Developers</a></li>
+                <li><a href="#Popular">Populares</a></li>
+                <li><a href="#toprated">Mejor Valoradas</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<body>
+    <main>
+        <div class="row">
+            <h4 class="center"><a name="Popular">Populares</a></h4>
+            <div class="col l3 " v-for="x in results">
+                <div class="card-panel center">
+                    <img :src="url_img + x.poster_path" height="250" class=" z-depth-3" onclick="image(this)">
+                    <p class="center">
+                        {{x.name}}
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+    <main2>
+        <div class="row">
+            <h4 class="center"><a name="toprated">Mejor Valoradas</a></h4>
+            <div class="col l3 " v-for="x in results">
+                <div class="card-panel center">
+                    <img :src="url_img + x.poster_path" height="250" class=" z-depth-3" onclick="image(this)">
+                    <p>
+                        {{x.name}}
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+    </main2>
+
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems);
+        });
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        new Vue({
+            el: 'main',
+            data: {
+                url: 'https://api.themoviedb.org/3/tv/popular?api_key=ba32643fe7bed460ef77e08cce060677&language=es-ES&page=2',
+                url_img: 'https://image.tmdb.org/t/p/w500',
+                tv: {},
+                results: ['8']
+            },
+            created() {
+                this.carga();
+            },
+            mounted() {
+
+            },
+            methods: {
+                carga: async function () {
+                    this.tv = await axios.get(this.url);
+                    this.results = this.tv.data.results;
+
+                }
+            }
+        });
+    </script>
+    <script>
+        new Vue({
+            el: 'main2',
+            data: {
+                url: 'https://api.themoviedb.org/3/tv/top_rated?api_key=ba32643fe7bed460ef77e08cce060677&language=es-ES&page=1',
+                url_img: 'https://image.tmdb.org/t/p/w500',
+                tvtop: {},
+                results: []
+            },
+            created() {
+                this.carga();
+            },
+            mounted() {
+                //  this.carga();
+            },
+            methods: {
+                carga: async function () {
+                    this.tvtop = await axios.get(this.url);
+                    this.results = this.tvtop.data.results;
+                    //console.log(x.data);
+                }
+            }
+        });
+    </script>
+
+</body>
+<footer class="page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.
+                </p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2019 Copyright
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+    </div>
+</footer>
+
+</html>
