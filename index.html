@@ -13,9 +13,8 @@
 </head>
 <header>
     <div class="navbar-fixed">
-
         <nav>
-            <div class="nav-wrapper">
+            <div class="nav-wrapper" style="background-color:#03c6fc;">
                 <img src="img/1.png" height="50"><a href="#" class="brand-logo"></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="#onair">Al Aire</a></li>
@@ -32,47 +31,47 @@
         <div class="row">
             <h4 class="center" style="font-family: 'Lilita One';"><a class="white-text" name="Popular">Populares</a>
             </h4>
-            <div class="col l3 " v-for="x in results">
-                <div class="card-panel center z-depth-3">
-                    <img :src="url_img + x.poster_path" height="250" class=" z-depth-3" onclick="image(this)">
-                    <p class="center" style="font-family: 'Roboto Condensed', sans-serif;">
-                        {{x.name}}
-                    </p>
+            <div class="col l3 center" style="padding:2% ; border-radius:2%;" v-for="x in results">
+                <div class="card" style="border-radius: 2%;">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator " height="210" :src="url_img + x.poster_path">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4"
+                            style="font-family: 'Roboto Condensed', sans-serif;font-size: medium;">{{x.name}}</span>
 
+                    </div>
+                    <div class="card-reveal" style="background-image: url({x.poster_path});">
+                        <span class="card-title center grey-text text-darken-4"
+                            style="font-family: 'Roboto Condensed', sans-serif;">{{x.name}}<i
+                                class="material-icons right">close</i></span>
+                        <p style="font-family: 'Roboto Condensed', sans-serif;">
+                            {{x.overview}}
+                        </p>
+                        <p style="font-family: 'Roboto Condensed', sans-serif;">
+                            <i class=" tiny material-icons">thumbs_up_down</i>Popularidad: {{x.popularity}}
+                        </p>
+                        <p style="font-family: 'Roboto Condensed', sans-serif;">
+                            <i class="tiny material-icons left-align">date_range</i> Primera emision:
+                            {{x.first_air_date}}
+                        </p>
+                    </div>
                 </div>
-
             </div>
-
         </div>
     </main>
     <main2>
         <div class="row">
             <h4 class="center" style="font-family: 'Lilita One';"><a class="white-text" name="toprated">Mejor
                     Valoradas</a></h4>
-            <div class="col l3 " v-for="x in results">
-                <div class="card-panel center z-depth-3">
-                    <img :src="url_img + x.poster_path" height="250" class=" z-depth-3">
-                    <p style="font-family: 'Roboto Condensed', sans-serif;">
-                        {{x.name}}
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-        </div>
-    </main2>
-    <main3>
-        <div class="row">
-            <h4 class="center" style="font-family: 'Lilita One';"><a class="white-text" name="onair">Al Aire</a></h4>
-            <div class="col l3 center" style="padding:2% ; border-radius:10%;" v-for="x in results">
-                <div class="card">
+            <div class="col l3 center" style="padding:2% ; border-radius:5%;" v-for="x in results">
+                <div class="card" style="border-radius: 5%;">
                     <div class="card-image waves-effect waves-block waves-light">
                         <img class="activator " height="210" :src="url_img + x.poster_path">
                     </div>
                     <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4" style="font-family: 'Roboto Condensed', sans-serif;">{{x.name}}</span>
+                        <span class="card-title activator grey-text text-darken-4"
+                            style="font-family: 'Roboto Condensed', sans-serif;font-size: medium;">{{x.name}}</span>
 
                     </div>
                     <div class="card-reveal">
@@ -82,6 +81,43 @@
                         <p style="font-family: 'Roboto Condensed', sans-serif;">
                             {{x.overview}}
                         </p>
+                        <p style="font-family: 'Roboto Condensed', sans-serif;">
+                            <i class=" tiny material-icons">thumbs_up_down</i> Popularidad: {{x.popularity}}
+                        </p>
+                        <p style="font-family: 'Roboto Condensed', sans-serif;">
+                            <i class="tiny material-icons left-align">date_range</i> Primera emision:
+                            {{x.first_air_date}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main2>
+    <main3>
+        <div class="row">
+            <h4 class="center" style="font-family: 'Lilita One';"><a class="white-text" name="onair">Al Aire</a></h4>
+            <div class="col l3 center" style="padding:2% ; border-radius:5%;" v-for="x in results">
+                <div class="card" style="border-radius: 5%;">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator " height="210" :src="url_img + x.poster_path">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4"
+                            style="font-family: 'Roboto Condensed', sans-serif;font-size: medium;">{{x.name}}</span>
+
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4"
+                            style="font-family: 'Roboto Condensed', sans-serif;">{{x.name}}<i
+                                class="material-icons right">close</i></span>
+                        <p style="font-family: 'Roboto Condensed', sans-serif;">
+                            {{x.overview}}
+                        </p>
+                        <p style="font-family: 'Roboto Condensed', sans-serif;">
+                            <i class=" tiny material-icons">thumbs_up_down</i> Popularidad: {{x.popularity}}
+                        </p>
+                        <p style="font-family: 'Roboto Condensed', sans-serif;">
+                            <i class="tiny material-icons left-align">date_range</i> Primera emision:
+                            {{x.first_air_date}}
                     </div>
                 </div>
             </div>
@@ -174,7 +210,7 @@
     </script>
 
 </body>
-<footer class="page-footer">
+<footer class="page-footer" style="background-color:#03c6fc;">
     <div class="container">
         <div class="row">
             <div class="col l6 s12">
@@ -189,14 +225,14 @@
                     <li><a class="grey-text text-lighten-3" href="#Popular">Populares</a></li>
                     <li><a class="grey-text text-lighten-3" href="#toprated">Mejor Valoradas</a></li>
                     <li><a class="grey-text text-lighten-3" href="#onair">Al Aire</a></li>
-                    
+
                 </ul>
             </div>
         </div>
     </div>
     <div class="footer-copyright">
         <div class="container">
-            
+
         </div>
     </div>
 </footer>
