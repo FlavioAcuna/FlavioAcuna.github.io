@@ -8,28 +8,34 @@
     <title>Proyecto VueJs</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lilita+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
 </head>
 <header>
-    <nav>
-        <div class="nav-wrapper">
-            <img src="img/1.png" height="50"><a href="#" class="brand-logo"></a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="#onair">Al Aire</a></li>
-                <li><a href="#Popular">Populares</a></li>
-                <li><a href="#toprated">Mejor Valoradas</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div class="navbar-fixed">
+
+        <nav>
+            <div class="nav-wrapper">
+                <img src="img/1.png" height="50"><a href="#" class="brand-logo"></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="#onair">Al Aire</a></li>
+                    <li><a href="#Popular">Populares</a></li>
+                    <li><a href="#toprated">Mejor Valoradas</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
 </header>
 
-<body>
+<body style="background-image: url(https://www.transparenttextures.com/patterns/cubes.png);background-color: #327ceb;">
     <main>
         <div class="row">
-            <h4 class="center"><a name="Popular">Populares</a></h4>
-            <div class="col l3 "  v-for="x in results">
+            <h4 class="center" style="font-family: 'Lilita One';"><a class="white-text" name="Popular">Populares</a>
+            </h4>
+            <div class="col l3 " v-for="x in results">
                 <div class="card-panel center z-depth-3">
                     <img :src="url_img + x.poster_path" height="250" class=" z-depth-3" onclick="image(this)">
-                    <p class="center">
+                    <p class="center" style="font-family: 'Roboto Condensed', sans-serif;">
                         {{x.name}}
                     </p>
 
@@ -41,11 +47,12 @@
     </main>
     <main2>
         <div class="row">
-            <h4 class="center"><a name="toprated">Mejor Valoradas</a></h4>
-            <div class="col l3 "  v-for="x in results">
+            <h4 class="center" style="font-family: 'Lilita One';"><a class="white-text" name="toprated">Mejor
+                    Valoradas</a></h4>
+            <div class="col l3 " v-for="x in results">
                 <div class="card-panel center z-depth-3">
                     <img :src="url_img + x.poster_path" height="250" class=" z-depth-3">
-                    <p>
+                    <p style="font-family: 'Roboto Condensed', sans-serif;">
                         {{x.name}}
                     </p>
 
@@ -58,20 +65,21 @@
     </main2>
     <main3>
         <div class="row">
-            <h4 class="center"><a name="onair">Al Aire</a></h4>
-            <div class="col l3 center" style="padding:2% ,border-radius 10%" v-for="x in results">
+            <h4 class="center" style="font-family: 'Lilita One';"><a class="white-text" name="onair">Al Aire</a></h4>
+            <div class="col l3 center" style="padding:2% ; border-radius:10%;" v-for="x in results">
                 <div class="card">
                     <div class="card-image waves-effect waves-block waves-light">
                         <img class="activator " height="210" :src="url_img + x.poster_path">
                     </div>
                     <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">{{x.name}}</span>
+                        <span class="card-title activator grey-text text-darken-4" style="font-family: 'Roboto Condensed', sans-serif;">{{x.name}}</span>
 
                     </div>
                     <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">{{x.name}}<i
+                        <span class="card-title grey-text text-darken-4"
+                            style="font-family: 'Roboto Condensed', sans-serif;">{{x.name}}<i
                                 class="material-icons right">close</i></span>
-                        <p>
+                        <p style="font-family: 'Roboto Condensed', sans-serif;">
                             {{x.overview}}
                         </p>
                     </div>
@@ -170,25 +178,25 @@
     <div class="container">
         <div class="row">
             <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.
+                <h5 class="white-text">Desarrolladores</h5>
+                <p class="grey-text text-lighten-4">Flavio Acuña.
                 </p>
+                <p class="grey-text text-lighten-4">Emmanuel Valenzuela</p>
             </div>
             <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Links</h5>
                 <ul>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#Popular">Populares</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#toprated">Mejor Valoradas</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#onair">Al Aire</a></li>
+                    
                 </ul>
             </div>
         </div>
     </div>
     <div class="footer-copyright">
         <div class="container">
-            © 2019 Copyright
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            
         </div>
     </div>
 </footer>
