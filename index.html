@@ -14,7 +14,7 @@
         <div class="nav-wrapper">
             <img src="img/1.png" height="50"><a href="#" class="brand-logo"></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="">Developers</a></li>
+                <li><a href="#onair">Al Aire</a></li>
                 <li><a href="#Popular">Populares</a></li>
                 <li><a href="#toprated">Mejor Valoradas</a></li>
             </ul>
@@ -26,7 +26,7 @@
     <main>
         <div class="row">
             <h4 class="center"><a name="Popular">Populares</a></h4>
-            <div class="col l3 " v-for="x in results">
+            <div class="col l3 "  v-for="x in results">
                 <div class="card-panel center z-depth-3">
                     <img :src="url_img + x.poster_path" height="250" class=" z-depth-3" onclick="image(this)">
                     <p class="center">
@@ -42,7 +42,7 @@
     <main2>
         <div class="row">
             <h4 class="center"><a name="toprated">Mejor Valoradas</a></h4>
-            <div class="col l3 " v-for="x in results">
+            <div class="col l3 "  v-for="x in results">
                 <div class="card-panel center z-depth-3">
                     <img :src="url_img + x.poster_path" height="250" class=" z-depth-3">
                     <p>
@@ -58,23 +58,25 @@
     </main2>
     <main3>
         <div class="row">
-            <div class="card col l3" v-for="x in results">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" :src="url_img + x.poster_path" height="250">
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">{{x.name}}</span>
+            <h4 class="center"><a name="onair">Al Aire</a></h4>
+            <div class="col l3 center" style="padding:2% ,border-radius 10%" v-for="x in results">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator " height="210" :src="url_img + x.poster_path">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">{{x.name}}</span>
 
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">{{x.name}}<i
-                            class="material-icons right">close</i></span>
-                    <p>
-                        {{x.overview}}
-                    </p>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">{{x.name}}<i
+                                class="material-icons right">close</i></span>
+                        <p>
+                            {{x.overview}}
+                        </p>
+                    </div>
                 </div>
             </div>
-
         </div>
     </main3>
 
