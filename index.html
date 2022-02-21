@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -10,13 +11,14 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lilita+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <header>
     <div class="navbar-fixed">
         <nav>
             <div class="nav-wrapper"
                 style="font-family: 'Lilita One'; background-color:#03c6fc;background-image: url(https://www.transparenttextures.com/patterns/60-lines.png);">
-                <img src="img/1.png" height="50"><a href="#" class="brand-logo">Theseriesbd</a>
+                <img class="logo" src="img/1.png" height="50"><a href="#" class="brand-logo">Theseriesbd</a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="#dev">Desarrolladores</a></li>
                     <li><a href="#Popular">Populares</a></li>
@@ -28,11 +30,11 @@
     </div>
 </header>
 
-<body style="background-image: url(https://www.transparenttextures.com/patterns/cubes.png);background-color: #327ceb;">
+<body>
     <main>
         <div class="row">
-            <h2 class="center" style="font-family: 'Lilita One';"><a class="white-text" name="Popular">Populares</a>
-            </h2>
+            <h1 class="center" ><a class="white-text" name="Popular">Populares</a>
+            </h1>
             <div class="col l3 center" style="padding:2% ; border-radius:2%;" v-for="x in results">
                 <div class="card" style="border-radius: 2%;">
                     <div class="card-image waves-effect waves-block waves-light">
@@ -45,19 +47,19 @@
                     </div>
                     <div class="card-reveal" style="background-image: url({x.poster_path});">
                         <span class="card-title center grey-text text-darken-4"
-                            style="font-family: 'Roboto Condensed', sans-serif;">{{x.name}}<i
+                        >{{x.name}}<i
                                 class="material-icons right">close</i></span>
-                        <p style="font-family: 'Roboto Condensed', sans-serif;">
+                        <p>
                             {{x.overview}}
                         </p>
-                        <p style="font-family: 'Roboto Condensed', sans-serif;">
+                        <p>
                             <i class=" tiny material-icons">thumbs_up_down</i>Popularidad: {{x.popularity}}
                         </p>
-                        <p style="font-family: 'Roboto Condensed', sans-serif;">
+                        <p>
                             <i class="tiny material-icons left-align">date_range</i> Primera emision:
                             {{x.first_air_date}}
                         </p>
-                        <p style="font-family: 'Roboto Condensed', sans-serif;">
+                        <p>
                             <i class="tiny material-icons left-align">thumb_up</i> Promedio de votos:
                             {{x.vote_average}}</p>
 
@@ -82,18 +84,18 @@
                     </div>
                     <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4"
-                            style="font-family: 'Roboto Condensed', sans-serif;">{{x.name}}<i
+                        >{{x.name}}<i
                                 class="material-icons right">close</i></span>
-                        <p style="font-family: 'Roboto Condensed', sans-serif;">
+                        <p>
                             {{x.overview}}
                         </p>
-                        <p style="font-family: 'Roboto Condensed', sans-serif;">
+                        <p>
                             <i class=" tiny material-icons">thumbs_up_down</i> Popularidad: {{x.popularity}}
                         </p>
-                        <p style="font-family: 'Roboto Condensed', sans-serif;">
+                        <p>
                             <i class="tiny material-icons left-align">date_range</i> Primera emision:
                             {{x.first_air_date}}</p>
-                        <p style="font-family: 'Roboto Condensed', sans-serif;">
+                        <p>
                             <i class="tiny material-icons left-align">thumb_up</i> Promedio de votos:
                             {{x.vote_average}}</p>
                     </div>
@@ -118,18 +120,18 @@
                     </div>
                     <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4"
-                            style="font-family: 'Roboto Condensed', sans-serif;">{{x.name}}<i
+                        >{{x.name}}<i
                                 class="material-icons right">close</i></span>
-                        <p style="font-family: 'Roboto Condensed', sans-serif;">
+                        <p>
                             {{x.overview}}
                         </p>
-                        <p style="font-family: 'Roboto Condensed', sans-serif;">
+                        <p>
                             <i class=" tiny material-icons">thumbs_up_down</i> Popularidad: {{x.popularity}}
                         </p>
-                        <p style="font-family: 'Roboto Condensed', sans-serif;">
+                        <p>
                             <i class="tiny material-icons left-align">date_range</i> Primera emision:
                             {{x.first_air_date}}</p>
-                        <p style="font-family: 'Roboto Condensed', sans-serif;">
+                        <p>
                             <i class="tiny material-icons left-align">thumb_up</i> Promedio de votos:
                             {{x.vote_average}}</p>
                     </div>

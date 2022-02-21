@@ -1,0 +1,13 @@
+body {
+  background-image: url(https://www.transparenttextures.com/patterns/cubes.png);
+  background-color: rebeccapurple;
+}
+.logo{
+    color: white;
+}
+p{
+font-family: 'Roboto Condensed', sans-serif;
+}
+h1{
+  font-family: 'Lilita One';
+}
